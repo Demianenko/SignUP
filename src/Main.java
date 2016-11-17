@@ -27,9 +27,9 @@ public class Main {
         //  goThread(new BritishTel(paid, 2, 7747, month));
          //goThread(new GBOffice(paid,2, 2, annual));
 
-                //goThread(new CanadaFax(trial,2,1,month));
+                goThread(new CanadaFax(trial,2,1,month));
                 //goThread(new CanadaMobile(paid,2,1,month));
-            goThread(new CanadaOffice(paid,2,2,month));
+           // goThread(new CanadaOffice(paid,2,2,month));
 
               // goThread(new USFax(trial,2,1,month));
             //goThread(new USMobile(paid,2,2,month));
