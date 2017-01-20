@@ -10,8 +10,8 @@ public class Main {
     static boolean month = true;
     public static boolean firefox = false;
     public static boolean remote = false;
-    public static int prod = 1; // 0 - prod 1 - env
-    public static String odsup = "odsup", rlz = "rlzstb", qaup = "qaup", ops ="ops", gciAqa = "gci2", att511 = "att511",
+    public static int prod = 0; // 0 - prod 1 - env
+    public static String odsup = "odsup", rlz = "rlzstb", qaup = "qaup", ops ="ops", gciAqa = "gci3", att511 = "att511",
             amsup = "amsup", devft3 = "devft3", devft3ams = "devft3ams", edi = "ediatt", mob ="devmob",
             amsup03 = "amsupp03", swtup  = "swtup";
     public static String environment = amsup;
@@ -22,18 +22,18 @@ public class Main {
     private int billingCycle = 0; //0 - annual,1*/
 
     public static void main(String[] args) throws Exception {
-        //goThread(new ATT(trial, 2, 1, month));
-        //goThread(new ATT(paid, 2, 3, month));
-        //  goThread(new BritishTel(paid, 2, 7747, month));
-         //goThread(new GBOffice(paid,2, 2, annual));
+              // goThread(new ATT(trial, 4, 1, month));
+               //goThread(new ATT(paid, 2, 2, month));
+       //  goThread(new BritishTel(paid, 2, 7747, month));
+        goThread(new GBOffice(trial,2, 2, month));
 
-                goThread(new CanadaFax(trial,2,1,month));
+               //  goThread(new CanadaFax(trial,2,1,month));
                 //goThread(new CanadaMobile(paid,2,1,month));
-           // goThread(new CanadaOffice(paid,2,2,month));
+           //  goThread(new CanadaOffice(paid,2,2,month));
 
               // goThread(new USFax(trial,2,1,month));
             //goThread(new USMobile(paid,2,2,month));
-        // goThread(new USOffice(paid,2,1,month));
+            //  goThread(new USOffice(paid,3,1,month));
 
 
 
@@ -58,15 +58,15 @@ public class Main {
     private static void goThread(final Account acc) {
         new Thread(new Runnable() {@Override public void run() {
             try {
-                 acc.changeName("JSergei","OctoberFirst");
-                 acc.changeCreditCard("Visa",CreditCardGenerator.getCreditCardNumber(),"123");
+               // acc.changeName("ASergei","JanuarySecond");
+                //acc.changeCreditCard("Visa",CreditCardGenerator.getCreditCardNumber(),"123");
                //  acc.changeCreditCard("Master Card",CreditCardGenerator.getCreditCardNumber(),"123");
                // acc.countryListBillingValue = "74";
                //  acc.vatValue ="vatushka!";
                // acc.vatValue ="";//  04147552
               // acc.changeCreditCard("American Express","373705305958152","1234");
                //  acc.changeCreditCard("Master Card","5171043822021533","555"); //
-               // acc.changeCreditCard("Visa","4024007197877474","123");
+              // acc.changeCreditCard("Master Card","5548181737210902","123");
 
                  // acc.changeCreditCardCountry("74","04147552");//04147552  vatushka!
                   acc.create();

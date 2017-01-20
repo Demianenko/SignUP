@@ -65,7 +65,7 @@ public class ATT extends Account {
     public void initial() {
             url = att;
             pref = 1650;
-            companyName = "attTest";
+            companyName = "ATTATTA";
             address1 = "1400 Fashion Island Blvd";
             address2 = "Ste 700";
             city = "San Mateo";
@@ -81,8 +81,8 @@ public class ATT extends Account {
         contactInformation(ContactForm_firstName, ContactForm_lastName, ContactForm_email, ContactForm_contactPhone, ContactForm_company);
         clickButtonBy(chkBoxUk);
         clickButtonBy(contactFormContinueButton);
-        Thread.sleep(6000);
-        waitForAjax(3000);
+        //Thread.sleep(6000);
+       waitForAjax(3000);
         fillFormByXpath(Phone_verificationCode, phoneCode);
         Thread.sleep(3000);
        // getScreenShot("d:\\FridayTask\\" + phoneNumber + "\\" + "1" + ".png");

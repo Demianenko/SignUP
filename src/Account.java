@@ -1,6 +1,7 @@
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.MarionetteDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -44,8 +45,8 @@ public abstract class Account {
     public String pathToChromeDriver = "C:\\chromedriver_win32";
     public String localURL ="http://10.0.2.15:4444/wd/hub";  //"http://192.168.112.78:4444/wd/hub"
 
-    public String mailTail = "@stressmail.dins.ru"; //"@od.anything3d.com"; // "@ab-soft.net";
-    //public String mailTail = "@ab-soft.net";
+    //public String mailTail = "@stressmail.dins.ru"; //"@od.anything3d.com"; // "@ab-soft.net";
+    public String mailTail = "@ab-soft.net";
     public Account(boolean paid, int numberOfEmployees, int numberOfPlan, boolean billingCycle, String mailBox){
         this(paid,numberOfEmployees,numberOfPlan,billingCycle);
         this.mailBox = mailBox + "+";
@@ -170,6 +171,10 @@ public abstract class Account {
                     System.setProperty("webdriver.gecko.driver", "D:\\tools\\geckodriver.exe");
                     wd = new MarionetteDriver();
                 } else {
+                    //ChromeOptions options = new ChromeOptions();
+                    //options.addArguments("user-data-dir=C:/Users/user/AppData/Local/Google/Chrome/User Data");
+                   // options.addArguments("--start-maximized");
+                   // wd = new ChromeDriver(options);
                     wd = new ChromeDriver();
                 }
             }
@@ -191,7 +196,7 @@ public abstract class Account {
         wd.manage().timeouts().implicitlyWait(implicitlyWait, TimeUnit.SECONDS);
         wd.get(url);
         wd.manage().deleteAllCookies();
-        Cookie ck1 = new Cookie("disable_Captcha", "succes");
+        Cookie ck1 = new Cookie("disable_Captcha", "success");
         wd.manage().addCookie(ck1);
         Set<Cookie> cookiesList =  wd.manage().getCookies();
         for(Cookie getcookies :cookiesList) {

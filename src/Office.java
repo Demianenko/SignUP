@@ -63,7 +63,7 @@ public abstract class Office extends Account {
         selectPhoneLocation(ContactForm_mainOfficeLocation, state);
         clickButtonByXpath(contactFormContinueButton);
         Thread.sleep(1000);
-        Cookie ck = new Cookie("disable_Captcha", "succes");
+        Cookie ck = new Cookie("disable_Captcha", "success");
         wd.manage().addCookie(ck);
         clickButtonByXpath(reviewSystemButton);
         paymentInfo(BillingInfoForm_addressLine1, BillingInfoForm_addressLine2, BillingInfoForm_city, BillingInfoForm_stateId, BillingInfoForm_zipCode,
